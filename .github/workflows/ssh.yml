@@ -5,11 +5,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: ls -a via ssh
-      uses: garygrossgarten/github-action-ssh@release
-      with:
-        command: ls -a
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
+      - name: User/Pw
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: ls -a
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}  
